@@ -1,0 +1,14 @@
+@media (max-width:600px) {
+  header.container { justify-content: center; }
+
+  header.container .logo-icon { display: none; }
+
+  header.container .buttons { 
+    margin: 0;
+    flex: 1;
+   }
+
+  header.container .buttons button { flex: 1; }
+
+  header.container .buttons button.about { border-left: none; }
+}
