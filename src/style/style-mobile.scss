@@ -8,7 +8,11 @@
     flex: 1;
    }
 
-  header.container .buttons button { flex: 1; }
+  header.container .buttons button { 
+    flex: 1;
+    font-size: .8rem;
+    padding: 10px;
+   }
 
   header.container .buttons button.about { border-left: none; }
 }
