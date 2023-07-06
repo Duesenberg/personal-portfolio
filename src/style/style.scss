@@ -109,10 +109,11 @@ header {
   section {
     &.banner {
       display: flex;
-
+      
       img {
         width: 100%;
         height: auto;
+        box-shadow: 0px 3px 20px 10px black;
       } 
     }
   }
@@ -131,13 +132,13 @@ header {
           .about-title {
             color: white;
             font-family: 'FiraCode';
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin-bottom: 25px;
           }
   
           .text {
             text-align: justify;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             color: white;
           }
         }
@@ -215,6 +216,11 @@ header {
                     min-width: 116px;
                     height: 116px;
                     margin: 0;
+
+                    p {
+                      font-weight: 700;
+                      font-size: 0.7rem;
+                    }
                   }
                 }
               }
