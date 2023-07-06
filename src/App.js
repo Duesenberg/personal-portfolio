@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './components/Header';
-import Banner from './components/Banner';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
@@ -12,7 +11,12 @@ function App() {
       <Header />
 
       <div className='main'>
-        <Banner />
+        <section className="banner">
+          <img 
+            src={require('./images/banner-pandepopovski.jpg')} 
+            alt='screenshot of code being written' />
+        </section>
+        
         <About />
         <Projects />
         <Contact />

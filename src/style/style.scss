@@ -3,6 +3,11 @@
   src: url('../fonts/Roboto-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'FiraCode';
+  src: url('../fonts/FiraCode-Regular.ttf');
+}
+
 * {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -36,7 +41,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    background-color: #5F5449;
+    background-color: #655038;
 
     .logo-icon {
       margin: 10px 40px;
@@ -69,6 +74,7 @@ header {
       align-items: stretch;
 
       button {
+        font-family: 'FiraCode';
         padding: 20px;
         font-size: 1.2rem;
         font-weight: 700;
@@ -87,7 +93,7 @@ header {
         }
 
         &:active {
-          transition-duration: 0s;
+          transition-duration: 0.1s;
           background-color: transparent;
           color: white;
         }
@@ -98,4 +104,13 @@ header {
 
 .main {
   flex: 1;
+
+  section {
+    &.banner {
+     img {
+      width: 100%;
+      height: auto;
+     } 
+    }
+  }
 }
