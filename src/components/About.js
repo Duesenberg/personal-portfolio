@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import htmlIcon from '../icons/language-html5.svg';
 import cssIcon from '../icons/language-css3.svg';
 import jsIcon from '../icons/language-javascript.svg';
@@ -14,6 +14,11 @@ import uniqid from 'uniqid';
 
 
 export default function About() {
+  //Set translation of carousel
+  const [translation, setTranslation] = useState(0);
+  const [mouseDown, setMouseDown] = useState(false);
+  const [intervalId, setIntervalId] = useState(null);
+
   const skills = [
     {
       index: 1,
@@ -60,7 +65,74 @@ export default function About() {
       name: 'JEST',
       iconURL: jestIcon
     },
-  ]
+  ];
+
+  const scrollCarouselRight = () => {
+    setMouseDown(true);
+    //Refs for carousel container & parent
+    const carouselRef = document.querySelector('.skills-carousel .container');
+    const carouselParentRef = document.querySelector('.skills-carousel');
+
+    //Get # of skills
+    let numOfSkills = 0;
+    skills.map(skill => numOfSkills += 1);
+    
+    //Execute this only if right edge of carousel's x value is larger than
+    //right edge of its parent's x value. 132px is the width of one skill box
+    //aling with margin + gap
+    const id = setInterval(() => {
+        //Get carousel container X coord & parent width
+        const carouselParentWidth = carouselParentRef.getBoundingClientRect().width;
+        const carouselX = carouselRef.getBoundingClientRect().x;
+
+        if ((carouselX >= (carouselParentWidth - (numOfSkills - 1) * 132)))
+          setTranslation((translation) => translation - 4);
+      }, 1);
+
+      setIntervalId(id);
+  }
+
+  const scrollCarouselLeft = () => {
+    setMouseDown(true);
+    //Refs for carousel container & parent
+    const carouselRef = document.querySelector('.skills-carousel .container');
+    const carouselParentRef = document.querySelector('.skills-carousel');
+    
+    //Get # of skills
+    let numOfSkills = 0;
+    skills.map(skill => numOfSkills += 1);
+
+    //Execute this only if right edge of carousel's x value is larger than
+    //right edge of its parent's x value. 132px is the width of one skill box
+    //aling with margin + gap
+    const id = setInterval(() => {
+      //Get carousel container X coord & parent right edge X coord
+      const carouselParentX = carouselParentRef.getBoundingClientRect().x
+      const carouselX = carouselRef.getBoundingClientRect().x;
+
+      if (carouselX < carouselParentX) {
+
+        setTranslation((translation) => translation + 4);
+      }
+    }, 1);
+
+    setIntervalId(id);
+  }
+
+  const handleMouseUp = () => {
+    setMouseDown(false);
+
+    // Clear the interval when the mouse button is released
+    clearInterval(intervalId);
+    setIntervalId(null);
+  }
+
+  //Translate the carousel whenever translation changes accordingly
+  useEffect(() => {
+    const carouselRef = document.querySelector('.skills-carousel .container');
+    carouselRef.style.transform = `translateX(${translation}px)`;
+  }, [translation]);
+
 
   return(
     <section className="about">
@@ -92,8 +164,14 @@ export default function About() {
         </section>
 
         <section className="bottom" aria-label="list of skills">
-          <button className="navigate prev" aria-label="previous">
-            <img src={leftIcon} alt="left arrow" />
+          <button 
+            className="navigate prev" 
+            aria-label="previous"
+            onMouseDown={scrollCarouselLeft}
+            onMouseUp={handleMouseUp}
+            onTouchStart={scrollCarouselLeft}
+            onTouchEnd={handleMouseUp}>
+              <img src={leftIcon} alt="left arrow" />
           </button>
           <div className="skills-carousel">
             <div className="container">
@@ -107,8 +185,14 @@ export default function About() {
               })}
             </div>
           </div>
-          <button className="navigate next" aria-label="next">
-            <img src={rightIcon} alt="right arrow" />
+          <button 
+            className="navigate next" 
+            aria-label="next"
+            onMouseDown={scrollCarouselRight}
+            onMouseUp={handleMouseUp}
+            onTouchStart={scrollCarouselRight}
+            onTouchEnd={handleMouseUp}>
+              <img src={rightIcon} alt="right arrow" />
           </button>
         </section>
       </div>
