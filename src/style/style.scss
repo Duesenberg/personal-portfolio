@@ -37,6 +37,7 @@ body {
 header {
   &.container {
     position: sticky;
+    z-index: 1;
     top: 0;
     display: flex;
     justify-content: space-between;
@@ -124,9 +125,10 @@ header {
       display: flex;
       flex-direction: column;
       width: 100%;
-
+      
       .about-wrapper {
         padding: 50px;
+        box-shadow: 0px 3px 20px 10px black;
 
         .top {
           .about-title {
@@ -138,8 +140,9 @@ header {
   
           .text {
             text-align: justify;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             color: white;
+            font-style: italic;
           }
         }
   
@@ -222,6 +225,125 @@ header {
                       font-size: 0.7rem;
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    &.projects {
+      background-color: #504B43;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .projects-wrapper {
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .projects-title {
+          color: white;
+          font-family: 'FiraCode';
+          font-size: 2rem;
+          margin-bottom: 25px;
+        }
+
+        .project-wrapper {
+          background-color: #77ad78;
+          display: flex;
+          align-items: center;
+          margin: 25px;
+          box-shadow: 0px 5px 12px 5px hwb(0 0% 100% / 0.342);
+
+          .project-photo {
+            margin: 40px;
+            width: 370px;
+            height: auto;
+            transition-property: width, margin, box-shadow, border-radius;
+            transition-duration: 0.35s;
+            
+            &:hover {
+              width: 400px;
+              margin: 25px;
+              box-shadow: 0px 5px 12px 5px hwb(0 0% 100% / 0.342);
+              border-radius: 20px;
+            }
+          }
+
+          .project-info {
+            margin: 40px;
+            background-color: #6F8F72;
+            padding: 25px;
+            transition-property: margin, box-shadow, border-radius;
+            transition-duration: 0.35s;
+            
+            &:hover {
+              margin: 40px 25px;
+              box-shadow: 0px 5px 12px 5px hwb(0 0% 100% / 0.342);
+              border-radius: 20px;
+            }
+
+            .title {
+              padding-left: 10px;
+              color: white;
+              font-family: 'FiraCode';
+              font-size: 1.8rem;
+              margin-bottom: 25px;
+              background-color: #6F8F72;
+            }
+
+            .text {
+              p {
+                text-align: justify;
+                font-size: 1.2rem;
+                color: white;
+              }
+            }
+
+            .tools-used {
+              border-top: 1px solid white;
+
+              p {
+                text-align: justify;
+                font-size: 1.2rem;
+                font-style: italic;
+                color: white;
+              }
+            }
+
+            .actions {
+              display: flex;
+              justify-content: end;
+              gap: 10px;
+
+              button {
+                font-family: 'FiraCode';
+                padding: 20px;
+                font-size: 1.2rem;
+                font-weight: 700;
+                background-color: #504B43;
+                border: none;
+                cursor: pointer;
+                color: white;
+                transition-property: background-color, color;
+                transition-duration: 0.5s;
+                transition-timing-function: ease-in-out;
+
+                &:hover {
+                  background-color: white;
+                  color: black;
+                }
+        
+                &:active {
+                  transition-duration: 0.1s;
+                  background-color: #504B43;
+                  color: white;
                 }
               }
             }
