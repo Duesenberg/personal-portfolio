@@ -1,6 +1,6 @@
 export default function Projects() {
   return(
-    <section className="projects" aria-label="projects">
+    <section className="projects" aria-label="projects" id='projects'>
       <div className="projects-wrapper">
         <h1 className="projects-title">Projects</h1>
 

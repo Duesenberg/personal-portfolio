@@ -3,7 +3,7 @@ import linkediIcon from '../icons/linkedin.svg';
 
 export default function Contact() {
   return(
-    <section className="contact" aria-label="contact">
+    <section className="contact" aria-label="contact" id='contact'>
       <div className="contact-wrapper">
         <h1 className="contact-title">Contact</h1>
 

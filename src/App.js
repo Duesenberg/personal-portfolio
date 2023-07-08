@@ -6,9 +6,29 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
+  const handleClick = (e) => {
+    switch (e.target.dataset.id) {
+      case 'about':
+        const aboutRef = document.getElementById('about');
+        aboutRef.scrollIntoView({ behavior: 'smooth' });
+        break;
+        case 'projects':
+        const projectsRef = document.getElementById('projects');
+        projectsRef.scrollIntoView({ behavior: 'smooth' });
+        break;
+        case 'contact':
+        const contactRef = document.getElementById('contact');
+        contactRef.scrollIntoView({ behavior: 'smooth' });
+        break;
+      default:
+        break;
+    }
+
+  }
+
   return (
     <div className="App">
-      <Header />
+      <Header handleClick={handleClick} />
 
       <div className='main'>
         <section className="banner">
