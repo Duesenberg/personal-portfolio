@@ -16,7 +16,6 @@ import uniqid from 'uniqid';
 export default function About() {
   //Set translation of carousel
   const [translation, setTranslation] = useState(0);
-  const [mouseDown, setMouseDown] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
 
   const skills = [
@@ -68,11 +67,9 @@ export default function About() {
   ];
 
   const scrollCarouselRight = () => {
-    setMouseDown(true);
-
     //Get largest skill index
     let skillIndex = 0;
-    skills.map(skill => {
+    skills.map((skill) => {
       if (skill.index > skillIndex) skillIndex = skill.index;
     })
     
@@ -94,8 +91,6 @@ export default function About() {
   }
 
   const scrollCarouselLeft = () => {
-    setMouseDown(true);
-    
     //Execute this only if right edge of carousel's x value is larger than
     //right edge of its parent's x value. 132px is the width of one skill box
     //aling with margin + gap
@@ -116,8 +111,6 @@ export default function About() {
   }
 
   const handleMouseUp = () => {
-    setMouseDown(false);
-
     // Clear the interval when the mouse button is released
     clearInterval(intervalId);
     setIntervalId(null);
