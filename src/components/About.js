@@ -69,24 +69,25 @@ export default function About() {
 
   const scrollCarouselRight = () => {
     setMouseDown(true);
-    //Refs for carousel container & parent
-    const carouselRef = document.querySelector('.skills-carousel .container');
-    const carouselParentRef = document.querySelector('.skills-carousel');
 
-    //Get # of skills
-    let numOfSkills = 0;
-    skills.map(skill => numOfSkills += 1);
+    //Get largest skill index
+    let skillIndex = 0;
+    skills.map(skill => {
+      if (skill.index > skillIndex) skillIndex = skill.index;
+    })
     
-    //Execute this only if right edge of carousel's x value is larger than
-    //right edge of its parent's x value. 132px is the width of one skill box
-    //aling with margin + gap
+    //Execute this only if right edge of last skill element is farther right
+    //than right edge of parent element
     const id = setInterval(() => {
-        //Get carousel container X coord & parent width
-        const carouselParentWidth = carouselParentRef.getBoundingClientRect().width;
-        const carouselX = carouselRef.getBoundingClientRect().x;
+      //Refs for carousel container & last skill
+      const carouselParentRef = document.querySelector('.skills-carousel');
+      const lastSkillRef = document.getElementById(skillIndex);
+      //Right values for above elements
+      const carouselParentRight = carouselParentRef.getBoundingClientRect().right;
+      const lastSkillRight = lastSkillRef.getBoundingClientRect().right;
 
-        if ((carouselX >= (carouselParentWidth - (numOfSkills - 1) * 132)))
-          setTranslation((translation) => translation - 4);
+      if (lastSkillRight > carouselParentRight)
+        setTranslation((translation) => translation - 5);
       }, 1);
 
       setIntervalId(id);
@@ -94,25 +95,20 @@ export default function About() {
 
   const scrollCarouselLeft = () => {
     setMouseDown(true);
-    //Refs for carousel container & parent
-    const carouselRef = document.querySelector('.skills-carousel .container');
-    const carouselParentRef = document.querySelector('.skills-carousel');
     
-    //Get # of skills
-    let numOfSkills = 0;
-    skills.map(skill => numOfSkills += 1);
-
     //Execute this only if right edge of carousel's x value is larger than
     //right edge of its parent's x value. 132px is the width of one skill box
     //aling with margin + gap
     const id = setInterval(() => {
+      //Refs for carousel container & parent
+      const carouselRef = document.querySelector('.skills-carousel .container');
+      const carouselParentRef = document.querySelector('.skills-carousel');
       //Get carousel container X coord & parent right edge X coord
       const carouselParentX = carouselParentRef.getBoundingClientRect().x
       const carouselX = carouselRef.getBoundingClientRect().x;
 
       if (carouselX < carouselParentX) {
-
-        setTranslation((translation) => translation + 4);
+        setTranslation((translation) => translation + 5);
       }
     }, 1);
 
@@ -169,6 +165,7 @@ export default function About() {
             aria-label="previous"
             onMouseDown={scrollCarouselLeft}
             onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
             onTouchStart={scrollCarouselLeft}
             onTouchEnd={handleMouseUp}>
               <img src={leftIcon} alt="left arrow" />
@@ -177,7 +174,7 @@ export default function About() {
             <div className="container">
               {skills.map((skill) => {
                 return (
-                  <button className="skill" key={uniqid()}>
+                  <button className="skill" key={uniqid()} id={skill.index}>
                     <img src={skill.iconURL} alt={skill.name} className="icon" />
                     <p className="text">{skill.index}. {skill.name}</p>
                   </button>
@@ -190,6 +187,7 @@ export default function About() {
             aria-label="next"
             onMouseDown={scrollCarouselRight}
             onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
             onTouchStart={scrollCarouselRight}
             onTouchEnd={handleMouseUp}>
               <img src={rightIcon} alt="right arrow" />
