@@ -1,0 +1,6 @@
+{
+  "short_name": "Pande Portfolio",
+  "name": "Pande's Personal Portfolio",
+  "start_url": ".",
+  "display": "standalone"
+}

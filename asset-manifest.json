@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/personal-portfolio/static/css/main.c73e2110.css",
+    "main.js": "/personal-portfolio/static/js/main.98a9b4c7.js",
+    "static/media/banner-pandepopovski.jpg": "/personal-portfolio/static/media/banner-pandepopovski.d592c0d497b8a8da7fd0.jpg",
+    "static/media/online-shop.png": "/personal-portfolio/static/media/online-shop.f666408d09fb0cb45a14.png",
+    "static/media/todo-list.png": "/personal-portfolio/static/media/todo-list.740d981ab3f8b82e0c75.png",
+    "static/media/FiraCode-Regular.ttf": "/personal-portfolio/static/media/FiraCode-Regular.fc45da4c3e5b90c232a2.ttf",
+    "static/media/social-media-clone.png": "/personal-portfolio/static/media/social-media-clone.ee199a91f9251d8ef0d0.png",
+    "static/media/Roboto-Regular.ttf": "/personal-portfolio/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
+    "static/media/cv-generator.png": "/personal-portfolio/static/media/cv-generator.b336e854af4f3ecfe9f8.png",
+    "static/media/tagging-game.png": "/personal-portfolio/static/media/tagging-game.0a13834a45a10f0ea594.png",
+    "static/media/battleship-game.png": "/personal-portfolio/static/media/battleship-game.e991cbe8723281623683.png",
+    "static/media/memory-card-game.png": "/personal-portfolio/static/media/memory-card-game.f0e3da6908ff6310d105.png",
+    "static/media/jest.svg": "/personal-portfolio/static/media/jest.d35a2fea591d481476d4bb41d449ba87.svg",
+    "static/media/react.svg": "/personal-portfolio/static/media/react.d4d0d30747e0472903f7d95704fc18e3.svg",
+    "static/media/sass.svg": "/personal-portfolio/static/media/sass.27c6277fd133bccb74abfafcdf8c9aee.svg",
+    "static/media/hedgehog-logo.svg": "/personal-portfolio/static/media/hedgehog-logo.3282f5108c2887a1e059.svg",
+    "static/media/github.svg": "/personal-portfolio/static/media/github.550985caaa8859d4b95ffb977ce9d9af.svg",
+    "static/media/language-javascript.svg": "/personal-portfolio/static/media/language-javascript.8032ca5e52274f720713e26766db15a7.svg",
+    "static/media/git.svg": "/personal-portfolio/static/media/git.27e7f50d036ecbb099fdee71d1647994.svg",
+    "index.html": "/personal-portfolio/index.html",
+    "static/media/webpack.svg": "/personal-portfolio/static/media/webpack.cd1d9386ced7ccc232b84a35a8b605cb.svg",
+    "static/media/linkedin.svg": "/personal-portfolio/static/media/linkedin.eaccfc4b453ff94aff73f6a0d1b53511.svg",
+    "static/media/language-html5.svg": "/personal-portfolio/static/media/language-html5.91ce1c16e7bcacf3228f97ba08c3c320.svg",
+    "static/media/language-css3.svg": "/personal-portfolio/static/media/language-css3.42d09853ba6777f6ad784958f62ce038.svg",
+    "static/media/npm.svg": "/personal-portfolio/static/media/npm.0d65720d6325ead67bb971931f1cc9ea.svg",
+    "static/media/chevron_left_FILL0_wght400_GRAD0_opsz48.svg": "/personal-portfolio/static/media/chevron_left_FILL0_wght400_GRAD0_opsz48.3a58c5da8019cc78bea54c49f8b9b7cb.svg",
+    "static/media/chevron_right_FILL0_wght400_GRAD0_opsz48.svg": "/personal-portfolio/static/media/chevron_right_FILL0_wght400_GRAD0_opsz48.c42bd81ee3bc7ccc9e3c470fac35f231.svg",
+    "main.c73e2110.css.map": "/personal-portfolio/static/css/main.c73e2110.css.map",
+    "main.98a9b4c7.js.map": "/personal-portfolio/static/js/main.98a9b4c7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c73e2110.css",
+    "static/js/main.98a9b4c7.js"
+  ]
+}
