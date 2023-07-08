@@ -139,7 +139,7 @@ export default function About() {
 
           <p className="text">
           Hello there! I'm Pande, an aspiring web developer who finds joy 
-          in transforming ideas into stunning digital realities. 
+          in transforming ideas into digital realities. 
           With a broad understanding of HTML, CSS, JavaScript, and more, 
           I strive to create intuitive websites that captivate audiences 
           and drive results.
@@ -154,7 +154,7 @@ export default function About() {
           </p>
 
           <p className="text">
-          Let's embark on this web development journey together and empower your 
+          Let's embark on this journey together and empower your 
           online presence with an unforgettable digital experience!
           </p>
         </section>
