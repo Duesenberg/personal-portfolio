@@ -1,7 +1,11 @@
 export default function Header({ handleClick }) {
   return(
     <header className="container">
-      <button className="logo-icon" aria-label="scroll to top" />
+      <button 
+        className="logo-icon" 
+        aria-label="scroll to top"
+        data-id="header"
+        onClick={handleClick} />
 
       <h1 className="header">Pande Popovski</h1>
 

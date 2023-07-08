@@ -12,13 +12,17 @@ function App() {
         const aboutRef = document.getElementById('about');
         aboutRef.scrollIntoView({ behavior: 'smooth' });
         break;
-        case 'projects':
+      case 'projects':
         const projectsRef = document.getElementById('projects');
         projectsRef.scrollIntoView({ behavior: 'smooth' });
         break;
-        case 'contact':
+      case 'contact':
         const contactRef = document.getElementById('contact');
         contactRef.scrollIntoView({ behavior: 'smooth' });
+        break;
+      case 'header':
+        const headerRef = document.getElementById('root');
+        headerRef.scrollIntoView({ behavior: 'smooth' });
         break;
       default:
         break;
