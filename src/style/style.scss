@@ -280,11 +280,10 @@ header {
             margin: 40px;
             background-color: #6F8F72;
             padding: 25px;
-            transition-property: margin, box-shadow, border-radius;
+            transition-property: box-shadow, border-radius;
             transition-duration: 0.35s;
             
             &:hover {
-              margin: 40px 25px;
               box-shadow: 0px 5px 12px 5px hwb(0 0% 100% / 0.342);
               border-radius: 20px;
             }
@@ -358,5 +357,18 @@ header {
         }
       }
     }
+  }
+}
+
+footer.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #504B43;
+  margin: 0;
+
+  p {
+    font-size: 1rem;
+    color: white;
   }
 }

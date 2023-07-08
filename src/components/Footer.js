@@ -1,7 +1,7 @@
 export default function Footer() {
   return(
-    <div className="footer">
-      Hello from Footer
-    </div>
+    <footer className="footer">
+      <p className='text'>&copy; Copyright 2023, Pande Popovski</p>
+    </footer>
   )
 };
