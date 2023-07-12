@@ -190,6 +190,14 @@ header {
             .container {
               display: flex;
               gap: 15px;
+
+              &:hover {
+                cursor: grab;
+              }
+
+              &:active {
+                cursor: grabbing;
+              }
     
               button {
                 &.skill {
@@ -202,7 +210,6 @@ header {
                   gap: 5px;
                   align-items: center;
                   justify-content: center;
-                  cursor: pointer;
                   background-color: transparent;
                   border: 1px solid white;
                   border-radius: 3px;
@@ -234,6 +241,14 @@ header {
                       font-size: 0.7rem;
                     }
                   }
+                }
+
+                &:hover {
+                  cursor: grab;
+                }
+  
+                &:active {
+                  cursor: grabbing;
                 }
               }
             }

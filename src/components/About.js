@@ -168,7 +168,11 @@ export default function About() {
               {skills.map((skill) => {
                 return (
                   <button className="skill" key={uniqid()} id={skill.index}>
-                    <img src={skill.iconURL} alt={skill.name} className="icon" />
+                    <img 
+                      src={skill.iconURL} 
+                        alt={skill.name} 
+                        className="icon"
+                        draggable='false'/>
                     <p className="text">{skill.index}. {skill.name}</p>
                   </button>
                 )
