@@ -14,9 +14,12 @@ import uniqid from 'uniqid';
 
 
 export default function About() {
-  //Set translation of carousel
   const [translation, setTranslation] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
+  const [mouseIsDown, setMouseIsDown] = useState(false);
+  const [initialMousePos, setInitialMousePos] = useState(null);
+  const [currentMousePos, setCurrentMousePos] = useState(null);
+  const [carouselOffset, setCarouselOffset] = useState(0);
 
   const skills = [
     {
@@ -122,6 +125,34 @@ export default function About() {
     carouselRef.style.transform = `translateX(${translation}px)`;
   }, [translation]);
 
+  const handleMouseDown = (e) => {
+    setMouseIsDown(true);
+    setInitialMousePos(e.clientX);
+    setCurrentMousePos(e.clientX);
+  }
+
+  const handleMouseMove = (e) => {
+    if (mouseIsDown) {
+      setCurrentMousePos(e.clientX);
+      const carouselRef = document.querySelector('.skills-carousel .container');
+      carouselRef.style.left = `${currentMousePos - initialMousePos}px`;
+
+      const carouselParentRef = document.querySelector('.skills-carousel');
+
+      if (carouselRef.style.left > '0px') carouselRef.style.left = '0px';
+      if (carouselRef.getBoundingClientRect().right < 
+          carouselParentRef.getBoundingClientRect().right)
+            carouselRef.style.left = 
+              `-${carouselRef.getBoundingClientRect().width -
+                carouselParentRef.getBoundingClientRect().width}px`;
+    }
+  }
+
+  window.addEventListener('mouseup', () => {
+    setMouseIsDown(false);
+    setInitialMousePos(null);
+    setCurrentMousePos(null);
+  });
 
   return(
     <section className="about" id="about">
@@ -164,19 +195,22 @@ export default function About() {
               <img src={leftIcon} alt="left arrow" />
           </button>
           <div className="skills-carousel">
-            <div className="container">
-              {skills.map((skill) => {
-                return (
-                  <button className="skill" key={uniqid()} id={skill.index}>
-                    <img 
-                      src={skill.iconURL} 
-                        alt={skill.name} 
-                        className="icon"
-                        draggable='false'/>
-                    <p className="text">{skill.index}. {skill.name}</p>
-                  </button>
-                )
-              })}
+            <div 
+              className="container" 
+              onMouseDown={handleMouseDown} 
+              onMouseMove={handleMouseMove}>
+                {skills.map((skill) => {
+                  return (
+                    <button className="skill" key={uniqid()} id={skill.index}>
+                      <img 
+                        src={skill.iconURL} 
+                          alt={skill.name} 
+                          className="icon"
+                          draggable='false'/>
+                      <p className="text">{skill.index}. {skill.name}</p>
+                    </button>
+                  )
+                })}
             </div>
           </div>
           <button 

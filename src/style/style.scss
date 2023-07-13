@@ -188,8 +188,9 @@ header {
             overflow: hidden;
 
             .container {
-              display: flex;
+              display: inline-flex;
               gap: 15px;
+              position: relative;
 
               &:hover {
                 cursor: grab;
@@ -220,6 +221,7 @@ header {
                     width: 70px;
                     height: auto;
                     filter: #{"invert()"};
+                    user-select: none;
                   }
 
                   p {
@@ -228,6 +230,7 @@ header {
                     color: white;
                     padding: 0;
                     margin: 0;
+                    user-select: none;
                   }
 
                   &:hover {
