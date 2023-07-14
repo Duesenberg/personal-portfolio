@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import htmlIcon from '../icons/language-html5.svg';
 import cssIcon from '../icons/language-css3.svg';
 import jsIcon from '../icons/language-javascript.svg';
@@ -8,8 +8,6 @@ import sassIcon from '../icons/sass.svg';
 import reactIcon from '../icons/react.svg';
 import webpackIcon from '../icons/webpack.svg';
 import gitIcon from '../icons/git.svg';
-import rightIcon from '../icons/chevron_right_FILL0_wght400_GRAD0_opsz48.svg';
-import leftIcon from '../icons/chevron_left_FILL0_wght400_GRAD0_opsz48.svg';
 import uniqid from 'uniqid';
 
 
@@ -98,7 +96,7 @@ export default function About() {
           <h1 className="about-title">About Me</h1>
 
           <p className="text">
-          Hello there! I'm Pande, an aspiring web developer who finds joy 
+          Hello there! I'm Pande, a web developer who finds joy 
           in transforming ideas into digital realities. 
           With a broad understanding of HTML, CSS, JavaScript, and more, 
           I strive to create intuitive websites that captivate audiences 
@@ -114,8 +112,7 @@ export default function About() {
           </p>
 
           <p className="text">
-          Let's embark on this journey together and empower your 
-          online presence with an unforgettable digital experience!
+          Let's embark on this journey together and get some work done!
           </p>
         </section>
 
