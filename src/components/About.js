@@ -14,12 +14,10 @@ import uniqid from 'uniqid';
 
 
 export default function About() {
-  const [translation, setTranslation] = useState(0);
-  const [intervalId, setIntervalId] = useState(null);
   const [mouseIsDown, setMouseIsDown] = useState(false);
   const [initialMousePos, setInitialMousePos] = useState(null);
   const [currentMousePos, setCurrentMousePos] = useState(null);
-  const [carouselOffset, setCarouselOffset] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(null);
 
   const skills = [
     {
@@ -69,85 +67,23 @@ export default function About() {
     },
   ];
 
-  const scrollCarouselRight = () => {
-    //Get largest skill index
-    let skillIndex = 0;
-    skills.map((skill) => {
-      if (skill.index > skillIndex) skillIndex = skill.index;
-    })
-    
-    //Execute this only if right edge of last skill element is farther right
-    //than right edge of parent element
-    const id = setInterval(() => {
-      //Refs for carousel container & last skill
-      const carouselParentRef = document.querySelector('.skills-carousel');
-      const lastSkillRef = document.getElementById(skillIndex);
-      //Right values for above elements
-      const carouselParentRight = carouselParentRef.getBoundingClientRect().right;
-      const lastSkillRight = lastSkillRef.getBoundingClientRect().right;
-
-      if (lastSkillRight > carouselParentRight)
-        setTranslation((translation) => translation - 5);
-      }, 1);
-
-      setIntervalId(id);
-  }
-
-  const scrollCarouselLeft = () => {
-    //Execute this only if right edge of carousel's x value is larger than
-    //right edge of its parent's x value. 132px is the width of one skill box
-    //aling with margin + gap
-    const id = setInterval(() => {
-      //Refs for carousel container & parent
-      const carouselRef = document.querySelector('.skills-carousel .container');
-      const carouselParentRef = document.querySelector('.skills-carousel');
-      //Get carousel container X coord & parent right edge X coord
-      const carouselParentX = carouselParentRef.getBoundingClientRect().x
-      const carouselX = carouselRef.getBoundingClientRect().x;
-
-      if (carouselX < carouselParentX) {
-        setTranslation((translation) => translation + 5);
-      }
-    }, 1);
-
-    setIntervalId(id);
-  }
-
-  const handleMouseUp = () => {
-    // Clear the interval when the mouse button is released
-    clearInterval(intervalId);
-    setIntervalId(null);
-  }
-
-  //Translate the carousel whenever translation changes accordingly
-  useEffect(() => {
-    const carouselRef = document.querySelector('.skills-carousel .container');
-    carouselRef.style.transform = `translateX(${translation}px)`;
-  }, [translation]);
-
+  //When mouse is clicked down on the carousel
   const handleMouseDown = (e) => {
+    const carouselParentRef = document.querySelector('.skills-carousel');
     setMouseIsDown(true);
     setInitialMousePos(e.clientX);
     setCurrentMousePos(e.clientX);
+    setScrollLeft(carouselParentRef.scrollLeft);
   }
 
   const handleMouseMove = (e) => {
     if (mouseIsDown) {
       setCurrentMousePos(e.clientX);
-      const carouselRef = document.querySelector('.skills-carousel .container');
-      carouselRef.style.left = `${currentMousePos - initialMousePos}px`;
-
       const carouselParentRef = document.querySelector('.skills-carousel');
-
-      if (carouselRef.style.left > '0px') carouselRef.style.left = '0px';
-      if (carouselRef.getBoundingClientRect().right < 
-          carouselParentRef.getBoundingClientRect().right)
-            carouselRef.style.left = 
-              `-${carouselRef.getBoundingClientRect().width -
-                carouselParentRef.getBoundingClientRect().width}px`;
+      carouselParentRef.scrollLeft = scrollLeft - (currentMousePos - initialMousePos);
     }
   }
-
+  
   window.addEventListener('mouseup', () => {
     setMouseIsDown(false);
     setInitialMousePos(null);
@@ -184,16 +120,6 @@ export default function About() {
         </section>
 
         <section className="bottom" aria-label="list of skills">
-          <button 
-            className="navigate prev" 
-            aria-label="previous"
-            onMouseDown={scrollCarouselLeft}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseUp}
-            onTouchStart={scrollCarouselLeft}
-            onTouchEnd={handleMouseUp}>
-              <img src={leftIcon} alt="left arrow" />
-          </button>
           <div className="skills-carousel">
             <div 
               className="container" 
@@ -213,16 +139,8 @@ export default function About() {
                 })}
             </div>
           </div>
-          <button 
-            className="navigate next" 
-            aria-label="next"
-            onMouseDown={scrollCarouselRight}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseUp}
-            onTouchStart={scrollCarouselRight}
-            onTouchEnd={handleMouseUp}>
-              <img src={rightIcon} alt="right arrow" />
-          </button>
+          <div className="shadow-overlay-left" />
+          <div className="shadow-overlay-right" />
         </section>
       </div>
     </section>
