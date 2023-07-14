@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/personal-portfolio/static/css/main.712e98c4.css",
-    "main.js": "/personal-portfolio/static/js/main.6c4ee2e5.js",
+    "main.css": "/personal-portfolio/static/css/main.354939ad.css",
+    "main.js": "/personal-portfolio/static/js/main.e8c5f40f.js",
     "static/media/banner-pandepopovski.jpg": "/personal-portfolio/static/media/banner-pandepopovski.d592c0d497b8a8da7fd0.jpg",
     "static/media/online-shop.png": "/personal-portfolio/static/media/online-shop.f666408d09fb0cb45a14.png",
     "static/media/todo-list.png": "/personal-portfolio/static/media/todo-list.740d981ab3f8b82e0c75.png",
@@ -27,11 +27,11 @@
     "static/media/npm.svg": "/personal-portfolio/static/media/npm.0d65720d6325ead67bb971931f1cc9ea.svg",
     "static/media/chevron_left_FILL0_wght400_GRAD0_opsz48.svg": "/personal-portfolio/static/media/chevron_left_FILL0_wght400_GRAD0_opsz48.3a58c5da8019cc78bea54c49f8b9b7cb.svg",
     "static/media/chevron_right_FILL0_wght400_GRAD0_opsz48.svg": "/personal-portfolio/static/media/chevron_right_FILL0_wght400_GRAD0_opsz48.c42bd81ee3bc7ccc9e3c470fac35f231.svg",
-    "main.712e98c4.css.map": "/personal-portfolio/static/css/main.712e98c4.css.map",
-    "main.6c4ee2e5.js.map": "/personal-portfolio/static/js/main.6c4ee2e5.js.map"
+    "main.354939ad.css.map": "/personal-portfolio/static/css/main.354939ad.css.map",
+    "main.e8c5f40f.js.map": "/personal-portfolio/static/js/main.e8c5f40f.js.map"
   },
   "entrypoints": [
-    "static/css/main.712e98c4.css",
-    "static/js/main.6c4ee2e5.js"
+    "static/css/main.354939ad.css",
+    "static/js/main.e8c5f40f.js"
   ]
 }
