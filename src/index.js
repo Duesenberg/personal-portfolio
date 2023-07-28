@@ -4,6 +4,7 @@ import App from './App';
 import './style/style.scss';
 import './style/style-mobile.scss';
 import './style/style-tablet.scss';
+import './style/header.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

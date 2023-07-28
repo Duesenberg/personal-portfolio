@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "ParkLane";
+  src: url('../fonts/ParkLaneNF.ttf');
+}
+
+@font-face {
+  font-family: 'Grenadier';
+  src: url('../fonts/GrenadierNF.ttf');
+}
+
+header {
+  &.container {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #2a2537;
+    background-image: url('../images/mooning.png');
+    box-shadow: 0px 3px 20px 10px black;
+    box-shadow: inset 0px -30px 30px rgb(0, 0, 0, .3);
+
+    div.left-side {
+      display: flex;
+      align-items: center;
+
+      h1.header {
+        margin: 0;
+        padding: 0;
+        color: rgb(255, 221, 53);
+        font-family: 'ParkLane';
+        font-size: 3.5rem;
+        font-weight: 200;
+        align-self: center;
+      }
+  
+      .logo-icon {
+        margin: 10px 40px;
+        padding: 10px;
+        width: 70px;
+        height: 70px;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        background-image: url('../icons/mariposa-logo.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .buttons {
+      margin: 0 20px;
+      display: flex;
+      align-items: stretch;
+
+      button {
+        font-family: 'Grenadier';
+        padding: 20px;
+        font-size: 2rem;
+        font-weight: 100;
+        background-color: transparent;
+        border: none;
+        border-left: 1px solid rgb(255, 221, 53);
+        cursor: pointer;
+        color: rgb(255, 221, 53);
+        transition-property: background-color, color;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+
+        &.in-view {
+          background-color: rgb(255, 221, 53);
+          color: black;
+        }
+
+        &:hover {
+          background-color: rgb(255, 221, 53);
+          color: black;
+        }
+
+        &:active {
+          transition-duration: 0.1s;
+          background-color: rgb(255, 221, 53);
+          color: white;
+        }
+      }
+    }
+  }
+}

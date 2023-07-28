@@ -1,27 +1,29 @@
 export default function Header({ handleClick }) {
   return(
     <header className="container">
-      <button 
-        className="logo-icon" 
-        aria-label="scroll to top"
-        data-id="header"
-        onClick={handleClick} />
+      <div className="left-side">
+        <button 
+          className="logo-icon" 
+          aria-label="scroll to top"
+          data-id="header"
+          onClick={handleClick} />
 
-      <h1 className="header">Pande Popovski</h1>
+        <h1 className="header">Mariposa</h1>
+      </div>
 
       <div className="buttons">
         <button 
           className="about" 
           data-id="about"
-          onClick={handleClick}>About Me</button>
+          onClick={handleClick}>about</button>
         <button 
           className="projects" 
           data-id="projects"
-          onClick={handleClick}>Projects</button>
+          onClick={handleClick}>projects</button>
         <button 
           className="contact" 
           data-id="contact"
-          onClick={handleClick}>Contact</button>
+          onClick={handleClick}>contact</button>
       </div>
     </header>
   )
