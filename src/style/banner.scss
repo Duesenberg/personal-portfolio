@@ -62,10 +62,58 @@
       background-size: 7.5%;
       box-shadow: inset 0px 0px 100px 20px black;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
 
-      div {
+      div.borders {
+        display: flex;
+        align-items: end;
+        height: 100%;
+
+        &.left {
+          flex-direction: row-reverse;
+        }
+
+        .border {
+          position: relative;
+          height: 100%;
+          width: 4vw;
+          background-image: url('../images/mooning.png');
+          
+          
+          &.left {
+            box-shadow: 5px 0px 30px 10px black;
+            border-radius: 0 50px 0 0;
+          }
+          
+          &.right {
+            box-shadow: -5px 0px 30px 10px black;
+            border-radius: 50px 0 0 0;
+          }
+
+          &.first {
+            background-color: rgb(251, 209, 0);
+            height: 90%;
+          }
+
+          &.second {
+            background-color: rgb(221, 184, 1);
+            height: 70%;
+          }
+
+          &.third {
+            background-color: rgb(154, 128, 0);
+            height: 50%;
+          }
+
+          &.fourth {
+            background-color: rgb(92, 77, 0);
+            height: 20%;
+          }
+        }
+      }
+
+      div.banner-title {
         display: flex;
         flex-direction: column;
         gap: 8vh;
@@ -75,12 +123,9 @@
           padding: 0;
 
           font-family: Grenadier;
-          font-size: calc(3.5rem + 8vw);
+          font-size: calc(3.5rem + 6vw);
+          text-align: center;
           animation: flicker 3s infinite;
-
-          &+ h1 {
-            padding-left: 10vw;
-          }
         }
       }
     }
