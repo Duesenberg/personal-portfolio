@@ -6,6 +6,7 @@ import './style/style-mobile.scss';
 import './style/style-tablet.scss';
 import './style/header.scss';
 import './style/banner.scss';
+import './style/about.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

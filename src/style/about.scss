@@ -1,0 +1,170 @@
+@font-face {
+  font-family: 'Grenadier';
+  src: url('../fonts/GrenadierNF.ttf');
+}
+
+section {
+  &.about {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #2a2537;
+    background-image: url('../images/mooning.png');
+    box-shadow: 0px 3px 20px 10px black,
+                inset 0px -30px 30px rgb(0, 0, 0, .3),
+                inset 0px 30px 30px rgb(0, 0, 0, .3);
+    
+    .about-wrapper {
+      padding: 50px;
+      box-shadow: 0px 3px 20px 10px black;
+
+      .top {
+        .about-title {
+          border-top: 10px double rgb(255, 221, 53);
+          border-bottom: 10px double rgb(255, 221, 53);
+          color: rgb(255, 221, 53);
+          font-family: 'Grenadier';
+          font-size: 3rem;
+          margin-bottom: 25px;
+        }
+        
+        .text {
+          text-align: justify;
+          font-size: 1.3rem;
+          color: white;
+        }
+      }
+
+      .bottom {
+        border: 10px double rgb(255, 221, 53);
+        background-color: rgb(3, 3, 3);
+        background-image: url('../images/mooning.png');
+        box-sizing: border-box;
+
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .shadow-overlay-left {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100px;
+          height: 100%;
+          background-image: linear-gradient(to right, black, transparent);
+          pointer-events: none;
+        }
+
+        .shadow-overlay-right {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 100px;
+          height: 100%;
+          background-image: linear-gradient(to left, black, transparent);
+          pointer-events: none;
+        }
+
+        .skills-carousel {
+          overflow-x: scroll;
+          -ms-overflow-style: none;  /* Internet Explorer 10+ */
+          scrollbar-width: none;  /* Firefox */
+
+
+          /* width */
+          &::-webkit-scrollbar {
+            height: 5px;
+          }
+
+          /* Track */
+          &::-webkit-scrollbar-track {
+            border-radius: 10px;
+          }
+          
+          /* Handle */
+          &::-webkit-scrollbar-thumb {
+            background-color: white; 
+            border-radius: 20px;
+          }
+
+          &::-webkit-scrollbar-thumb:hover {
+            background-color: white;
+          }
+
+          .container {
+            display: inline-flex;
+            gap: 15px;
+            position: relative;
+
+            &:hover {
+              cursor: grab;
+            }
+
+            &:active {
+              cursor: grabbing;
+            }
+  
+            button {
+              &.skill {
+                margin: 8px;
+                min-width: 100px;
+                height: 100px;
+                padding: 5px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                align-items: center;
+                justify-content: center;
+                background-color: transparent;
+                border: 1px solid rgb(255, 221, 53);
+                border-radius: 3px;
+                transition-property: filter, min-width, height, margin;
+                transition-duration: 0.5s;
+  
+                img {
+                  width: 70px;
+                  height: auto;
+                  filter: #{"invert(100%) sepia(48%) saturate(4878%) hue-rotate(326deg) brightness(103%) contrast(103%)"};
+                  user-select: none;
+                }
+
+                p {
+                  font-family: 'FiraCode';
+                  font-size: .65rem;
+                  color: rgb(255, 221, 53);
+                  padding: 0;
+                  margin: 0;
+                  user-select: none;
+                }
+
+                &:hover {
+                  min-width: 116px;
+                  height: 116px;
+                  margin: 0;
+
+                  p {
+                    font-weight: 700;
+                    font-size: 0.7rem;
+                  }
+                }
+              }
+
+              &:hover {
+                cursor: grab;
+              }
+
+              &:active {
+                cursor: grabbing;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

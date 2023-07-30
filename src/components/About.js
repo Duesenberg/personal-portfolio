@@ -96,23 +96,27 @@ export default function About() {
           <h1 className="about-title">About Me</h1>
 
           <p className="text">
-          Hello there! I'm Pande, a web developer who finds joy 
-          in transforming ideas into digital realities. 
-          With a broad understanding of HTML, CSS, JavaScript, and more, 
-          I strive to create intuitive websites that captivate audiences 
-          and drive results.
+            I'm an Electrical Engineer and working as a Teaching Assistant in 
+            the field. One of my hobbies I am really passionate about is coding,
+            including Web Development and Machine Learning.
           </p>
 
           <p className="text">
-          My approach combines creativity, technical expertise, and a 
-          user-centric mindset. By utilizing the latest frameworks and employing 
-          best practices in web development, I ensure that every project I 
-          undertake is visually appealing, fully functional, and optimized for 
-          speed and performance.
+            I have a broad understanding of HTML, CSS, Javascript and more. I enjoy
+            working on personal projects, finding some coding buddies to work on a 
+            project together, and contributing to open-source projects.
           </p>
 
           <p className="text">
-          Let's embark on this journey together and get some work done!
+            I always strive to create something unique that stands out and makes
+            an impact.
+          </p>
+
+          <p className="text">
+            I'm constantly looking to stay up to date with the popular 
+            technologies, utilizing the latest frameworks and employing best
+            practices in web development. I also use my free time to learn new
+            skill.
           </p>
         </section>
 
