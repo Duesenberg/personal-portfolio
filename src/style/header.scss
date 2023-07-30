@@ -18,8 +18,8 @@ header {
     align-items: stretch;
     background-color: #2a2537;
     background-image: url('../images/mooning.png');
-    box-shadow: 0px 3px 20px 10px black;
-    box-shadow: inset 0px -30px 30px rgb(0, 0, 0, .3);
+    box-shadow: 0px 3px 20px 10px black,
+                inset 0px -30px 30px rgb(0, 0, 0, .3);
 
     div.left-side {
       display: flex;

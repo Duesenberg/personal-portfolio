@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'Grenadier';
+  src: url('../fonts/GrenadierNF.ttf');
+}
+
+@keyframes flicker {
+  from {
+    color: rgb(255, 221, 53);
+    text-shadow: 0px 0px 30px rgb(255, 221, 53);
+  }
+  40% {
+    color: rgb(255, 221, 53);
+    text-shadow: 0px 0px 30px rgb(255, 221, 53);
+  }
+  43% {
+    color: rgb(193, 167, 39);
+    text-shadow: 0px 0px 0px rgb(255, 221, 53);
+  }
+  46% {
+    color: rgb(236, 205, 50);
+    text-shadow: 0px 0px 10px rgb(236, 205, 50);
+  }
+  60% {
+    color: rgb(236, 205, 50);
+    text-shadow: 0px 0px 10px rgb(236, 205, 50);
+  }
+  63% {
+    color: rgb(193, 167, 39);
+    text-shadow: 0px 0px 0px rgb(255, 221, 53);
+  }
+  66% {
+    color: rgb(255, 221, 53);
+    text-shadow: 0px 0px 20px rgb(255, 221, 53);
+  }
+  69% {
+    color: rgb(255, 221, 53);
+    text-shadow: 0px 0px 20px rgb(255, 221, 53);
+  }
+  71% {
+    color: rgb(193, 167, 39);
+    text-shadow: 0px 0px 0px rgb(255, 221, 53);
+  }
+  74% {
+    color: rgb(255, 221, 53);
+    text-shadow: 0px 0px 30px rgb(255, 221, 53);
+  }
+  to {
+    color: rgb(255, 221, 53);
+    text-shadow: 0px 0px 30px rgb(255, 221, 53);
+  }
+}
+
+.main {
+  section {
+    &.banner {
+      width: 100%;
+      height: 87vh;
+      display: flex;
+      background-color: #285580;
+      background-image: url('../images/banner-pande.png'),
+                        url('../images/mooning.png');
+      background-size: 7.5%;
+      box-shadow: inset 0px 0px 100px 20px black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 8vh;
+        position: relative;
+        h1 {
+          margin: 0;
+          padding: 0;
+
+          font-family: Grenadier;
+          font-size: calc(3.5rem + 8vw);
+          animation: flicker 3s infinite;
+
+          &+ h1 {
+            padding-left: 10vw;
+          }
+        }
+      }
+    }
+  }
+}

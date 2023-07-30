@@ -5,6 +5,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import userEvent from '@testing-library/user-event';
+import Banner from './components/Banner';
 
 function App() {
   const handleClick = (e) => {
@@ -65,12 +66,7 @@ function App() {
       <Header handleClick={handleClick} />
 
       <div className='main'>
-        <section className="banner">
-          <img 
-            src={require('./images/banner-pandepopovski.jpg')} 
-            alt='screenshot of code being written' />
-        </section>
-        
+        <Banner />
         <About />
         <Projects />
         <Contact />
