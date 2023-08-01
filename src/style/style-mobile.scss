@@ -1,4 +1,4 @@
-@media (max-width:615px) {
+@media (max-width:660px) {
   header.container { justify-content: center; }
 
   header.container .logo-icon { display: none; }
@@ -27,7 +27,7 @@
           }
 
           .text {
-            font-size: 1.2rem;
+            font-size: calc(.8rem + 1vw);
           }
         }
       }
@@ -36,32 +36,30 @@
     section.projects {
       .projects-wrapper {
         padding: 20px;
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
         .projects-title {
           margin-bottom: 15px;
         }
 
-        .project-wrapper {
+        div.project-wrapper {
           margin: 0px;
+          width: 380px;
+          height: 380px;
 
           img.project-photo {
-            display: inline-block;
-            margin: 10px;
-            width: calc(100% - 20px);
+            width: 100%;
             height: auto;
-            
-            &:hover {
-              width: calc(100% - 20px);
-              margin: 10px;
-              box-shadow: none;
-              border-radius: 0px;
-            }
+            transition: 0s;
           }
 
           .project-info {
             margin: 0px;
             padding: 25px;
             width: calc(100% - 50px);
+            transition: 0s;
 
             &:hover {
               box-shadow: none;
@@ -70,6 +68,19 @@
 
             .title {
               margin-bottom: 15px;
+              font-size: 1.5rem;
+            }
+
+            .text {
+              p {
+                font-size: .9rem;
+              }
+            }
+
+            .tools-used {
+              p {
+                font-size: .8rem;
+              }
             }
 
             .actions {
@@ -78,7 +89,7 @@
               .links { display: none; }
 
               a {
-                font-size: 1.5rem;
+                font-size: .8rem;
                 padding: 15px;
               }
             }
@@ -95,6 +106,7 @@
 
       h1.contact-title {
         margin-right: 0;
+        margin-top: 0;
       }
     }
 
