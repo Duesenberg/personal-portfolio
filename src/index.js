@@ -8,6 +8,7 @@ import './style/header.scss';
 import './style/banner.scss';
 import './style/about.scss';
 import './style/projects.scss';
+import './style/contact.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
