@@ -42,12 +42,14 @@ footer.footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #504B43;
+  background-color: #2a2537;
+  background-image: url('../images/mooning.png');
   margin: 0;
-  box-shadow: 0px -3px 20px 10px black;
+  box-shadow: 0px -3px 20px 10px black,
+              inset 0px 30px 30px rgb(0, 0, 0, .3);
 
   p {
     font-size: 1rem;
-    color: white;
+    color: rgb(255, 221, 53);
   }
 }

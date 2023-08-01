@@ -5,7 +5,8 @@
 
 section.contact {
   .contact-wrapper {
-    background-color: #3a3a3a;
+    border-top: 10px double rgb(255, 221, 53);
+    background-color: #2a2537;
     background-image: url('../images/leaves-texture.png');
     padding: 50px;
     display: flex;
@@ -21,7 +22,6 @@ section.contact {
       font-size: 3rem;
       margin-bottom: 25px;
     }
-
 
     a {
       margin: 8px;
