@@ -1,0 +1,141 @@
+@font-face {
+  font-family: 'Grenadier';
+  src: url('../fonts/GrenadierNF.ttf');
+}
+
+section {
+  &.projects {
+    background-color: #285580;
+    background-image: url('../images/leaves-texture.png');
+    box-shadow: inset 0px 0px 100px 20px black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .projects-title {
+      color: rgb(255, 221, 53);
+      font-family: 'Grenadier';
+      font-size: 3rem;
+      border-top: 10px double rgb(255, 221, 53);
+      border-bottom: 10px double rgb(255, 221, 53);
+      margin: 50px 50px 25px 50px;
+    }
+
+    .projects-wrapper {
+      padding: 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,  minmax(550px, 1fr));
+      gap: 50px;
+      justify-items: center;
+
+      .project {
+        .project-wrapper {
+          width: 500px;
+          height: 500px;
+          background-color: rgb(63, 63, 63);
+          box-sizing: border-box;
+          border: 10px double rgb(255, 221, 53);
+          background-image: url('../images/leaves-texture.png');
+          box-shadow: 0px 5px 12px 5px hwb(0 0% 100% / 0.342);
+          
+          // On hover hide image & show project info
+          &:hover > img {
+            height: 0;
+            position: absolute;
+            opacity: 0;
+          }
+          &:hover > div {
+            opacity: 1;
+            height: auto;
+            padding: 25px;
+          }
+          
+          .project-photo {
+            width: 100%;
+            height: auto;
+            transition: opacity .5s ease-in-out;
+          }
+          
+          .project-info {
+            background-color: transparent;
+            transition: opacity .5s ease-in-out;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+
+            .title {
+              padding-left: 10px;
+              color: rgb(255, 221, 53);
+              font-family: 'Grenadier';
+              font-size: 2.3rem;
+              letter-spacing: 2px;
+              margin: 0;
+              margin-bottom: 25px;
+            }
+  
+            .text {
+              p {
+                text-align: justify;
+                font-size: 1.2rem;
+                color: white;
+              }
+            }
+  
+            .tools-used {
+              border-top: 1px solid white;
+  
+              p {
+                text-align: justify;
+                font-size: 1.2rem;
+                font-style: italic;
+                color: white;
+              }
+            }
+  
+            .actions {
+              display: flex;
+              justify-content: end;
+              align-items: center;
+              gap: 15px;
+  
+              .links {
+                color: rgb(255, 221, 53);
+                font-family: 'Grenadier';
+                font-size: 2.3rem;
+                margin: 0;
+              }
+  
+              a {
+                padding: 15px;
+                font-size: 1.3rem;
+                font-weight: 700;
+                background-color: #504B43;
+                border: none;
+                cursor: pointer;
+                color: white;
+                transition-property: background-color, color;
+                transition-duration: 0.5s;
+                transition-timing-function: ease-in-out;
+                text-decoration: none;
+                border: 4px double rgb(255, 221, 53);
+                box-sizing: border-box;
+  
+                &:hover {
+                  background-color: rgb(255, 221, 53);
+                  color: black;
+                }
+        
+                &:active {
+                  transition-duration: 0.1s;
+                  background-color: #504B43;
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

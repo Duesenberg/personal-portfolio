@@ -17,3 +17,6 @@ Icons taken from
 
 Images:
   - Free images from https://www.vecteezy.com/
+
+Textures:
+  - https://www.transparenttextures.com/

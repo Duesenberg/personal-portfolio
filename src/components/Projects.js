@@ -1,8 +1,10 @@
 export default function Projects() {
+  
   return(
     <section className="projects" aria-label="projects" id='projects'>
+      <h1 className="projects-title">Projects</h1>
+      
       <div className="projects-wrapper">
-        <h1 className="projects-title">Projects</h1>
 
         <section className="project" aria-label="social media clone">
           <div className="project-wrapper">
@@ -20,11 +22,10 @@ export default function Projects() {
                 <div className="text">
                   <p>An imitation of a social media platform. 
                     Built as a web app, works both on desktop and mobile. </p>
-                  <p>You can create an account and use your credentials to log
-                    in, start chats with all registered users and send them texts
-                    and photos, make text or photo posts which everyone can see,
-                    and also check your profile to see what you have posted or 
-                    to log out from your profile.
+                  <p>You can create an account, start chats with registered 
+                    users and send them texts and photos, make text or photo 
+                    posts which everyone can see, and also check your profile 
+                    to see what you have posted.
                   </p>
                 </div>
 
@@ -65,18 +66,15 @@ export default function Projects() {
               <div className="info-wrapper">
                 <div className="text">
                   <p>
-                    My own version of the well-known Battleship board game.
-                    You play against a computer on a 10x10 board, each player
-                    with five different ships on their board.
+                    My own version of the Battleship board game. Play against 
+                    a computer on a 10x10 board, each player with five different 
+                    ships on their board.
                   </p>
                   <p>
-                    I wanted the game to look a bit more appealing, so for this
-                    project I took the time to create the graphic assets too.
-                    The application is mobile responsive as well. The computer has
-                    ten different ship layouts, one of which is chosen randomly
-                    for each game. The computer chooses a random square when 
-                    attacking, which I'm planning to change and implement an algorithm
-                    in order to make the opponent smarter.
+                    Took the time to create the graphic assets as well for this project.
+                    The application is mobile responsive. The computer has
+                    ten different ship layouts. It chooses a random square when 
+                    attacking, which I'm planning to change.
                   </p>
                 </div>
 
@@ -125,8 +123,6 @@ export default function Projects() {
                   <p>
                     Because of the large size of the photo, I thought the application 
                     wouldn't really work for mobile so I didn't make it mobile responsive.
-                    The triggers for the characters on the photo were made using
-                    'map' and 'area' elements in HTML.
                   </p>
                 </div>
 
@@ -167,15 +163,15 @@ export default function Projects() {
               <div className="info-wrapper">
                 <div className="text">
                   <p>
-                    A mock-up website for an online store. The website consists
+                    A mock-up website for an online store. It consists
                     of four sections: a home, about us, store page and a shopping
                     cart page to which you can add or remove items from. The total
                     price of all items is calculated in the checkout section of
                     the cart page.
                   </p>
                   <p>
-                    I've made the application responsive for multiple screen sizes
-                    including mobile devices. Used the Material UI library for
+                    Responsive for multiple screen sizes
+                    including mobile devices. Used Material UI library for
                     several components in this project.
                   </p>
                 </div>
