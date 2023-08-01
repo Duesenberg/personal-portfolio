@@ -114,9 +114,9 @@ export default function About() {
 
           <p className="text">
             I'm constantly looking to stay up to date with the popular 
-            technologies, utilizing the latest frameworks and employing best
+            technologies, utilizing the latest frameworks and employing the best
             practices in web development. I also use my free time to learn new
-            skill.
+            skills.
           </p>
         </section>
 
